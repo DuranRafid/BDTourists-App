@@ -1,0 +1,24 @@
+<ion-view view-title="Account" name="Sign-up-view">
+  <ion-content class="padding">
+      <div class="list list-inset" >
+          <label class=" item">
+              First name :&nbsp;  <span name="firstname" style="padding:5px;">{{data.firstname}}</span>
+          </label>
+		  <label class="item">
+              Surname :&nbsp; <span style="padding:5px;" ng-model="data.surname">{{data.surname}}</span>
+          </label>
+		  <label class="item">
+              Email :&emsp;&emsp;&nbsp;&nbsp; <span >{{data.email}}</span>
+          </label>
+		  <label class="item">
+              Phone No :&nbsp;&nbsp; <span style="padding:5px;">{{data.phoneno}}{{data.phone}}</span>
+          </label>
+		  <div class="item ">
+              Gender :&emsp; <span name="gender" >{{data.sex}}</span>
+          </div>
+		  <div class="item">
+              City: &emsp;&emsp;&nbsp; <span ng-model="data.district">{{data.district__name}}{{data.city}}</span>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>
