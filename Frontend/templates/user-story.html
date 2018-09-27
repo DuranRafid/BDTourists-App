@@ -1,0 +1,69 @@
+<meta charset="utf-8">
+<ion-view view-title="Share Story" name="share-story-view">
+  <ion-content class="padding">
+    
+      <div class="item" style="border:none;" >
+          District: &emsp; &emsp;
+          <select ng-model="data.district" ng-change="changed()" ng-options="item for item in districts"> </select>   
+      </div>
+      <div class="item" style="border:none;">
+          Place: &emsp;&emsp;
+          <select ng-model="data.place" ng-options="item for item in places" >
+              
+          </select>      
+      </div>
+      <div class="item" style="border:none;" >
+          Story-type:
+          <select ng-model="data.storytype">
+              <option  ng-repeat="storytype in storytypes" value="{{storytype.value}}">{{storytype.label}}</option>
+          </select>
+      </div>
+      <div class="item-input" style="border:none;" ng-show="data.storytype=='journey'">
+          Cost :&nbsp;  <input type="text" name="cost" placeholder="Cost" style="border : 1px solid Gray; padding:5px;"ng-model="data.cost">
+      </div>
+      <div class="item-input" style="border:none;" ng-show="data.storytype=='journey'">
+          Duration :&nbsp; <input type="text" name="duration" placeholder="Duration" style="border : 1px solid Gray; padding:5px;"ng-model="data.duration">
+      </div>
+      <div class="item" style="border:none;"  ng-show="data.storytype=='report'">
+          Accident Type 
+          <select ng-model="data.accident">
+             <option value ="Mild Injury"> Mild Injury </option>
+              <option value="Serious Injury"> Serious Injury</option>
+              <option value="Death"> Death </option>
+          </select>    
+      </div>
+      <div class="item" style="border:none;" ng-show="data.storytype=='report'">
+          Reason :
+          <select ng-model="data.reason" >
+              <option value ="Swimming"> Swimming </option>
+              <option value="Hill Climb"> Hill climb</option>
+              <option value="Dangerous animals"> Dangerous animals </option>
+              <option value="Quick sand"> Quick sand </option>
+              <option value="Natural Disaster"> Natural Disaster </option>
+          </select>    
+      </div>
+      <div class="item" style="border: none">
+          <p><b>Share Your Story:</b></p>
+      </div>
+      <div class="item" style="border: none">
+      <textarea rows="8" cols="50" ng-model="data.story" style="border:1px solid Gainsboro">
+          
+      </textarea>
+      </div>
+      <div ng-show="data.storytype=='report'">
+          <center>
+          <button class="button button-small button-energized" ng-click="openMap()"> Point In map </button>
+          </center>      
+      </div>
+      <div ng-show="data.storytype=='aesthetic'">
+        <!--   <input type="file" id="file" style="display:none;">
+         <input class="button button-small button-calm" value="Share Media" onclick="document.getElementById('file').click();"> -->
+          <img ng-src="{{image}}" />
+      <!--     <input type="file" name="file" id="file" ng-model="UserPhoto" ng-click="uploadFile(this)"/> data:image/jpg;base64, -->
+          
+          <input type="file" ng-model="image" onChange="angular.element(this).scope().setFile(this)" accept="image/*">
+          
+      </div>
+	  <button class="button button-block button-calm" ng-click="share()"> Share </button>
+  </ion-content>
+</ion-view>

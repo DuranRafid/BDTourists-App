@@ -1,0 +1,36 @@
+<ion-view view-title="User Story" name="share-story-view">
+  <ion-content class="padding">
+    <ion-refresher pulling-text="Pull To Refresh..."on-refresh="doRefresh()">
+    </ion-refresher>
+      <section class="list">
+          <article ng-repeat="story in stories track by $index">
+            <div style="border:1px solid Gainsboro;" >  
+           <!--  <a href="{{story.link}}" class="item" style="border:none;" ng-if="story.title">
+              <img ng-src="img\bichanakandi.jpg" class="user-img"> -->
+              <h2 class="noWhiteSpace">{{story.user__firstname}}&nbsp;{{story.user__surname}}</h2>
+              <p class="noWhiteSpace">{{story.description}}</p>
+                <p class="noWhiteSpace">Duration: &nbsp;{{story.duration}}</p>
+                  <p class="noWhiteSpace">Cost: &nbsp;{{story.cost}}</p>
+              <p> - Posted on {{story.date}} {{story.time}}</p>
+         <!--   </a> -->
+                
+              <button class="button button-small button-calm" style="display:inline-block; border:none; height: 50%; margin-left:40px;"> Upvote </button>
+              <button class="button button-small button-dark" style="float:right; margin-right: 40px;"> Downvote</button>
+            
+              </div>    
+          </article>
+      </section>
+   <!--   <ion-infinite-scroll on-infinite="loadMore()"distance="5%">
+      </ion-infinite-scroll> -->
+    </ion-content>
+</ion-view>
+<style>
+    .user-img{
+        height:100px;
+        width:100px;
+        float:left;
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+    
+</style>

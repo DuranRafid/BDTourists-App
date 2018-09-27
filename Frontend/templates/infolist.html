@@ -1,0 +1,30 @@
+<ion-view view-title="Account" name="Sign-up-view">
+  <ion-content class="padding">
+      <div class="list list-inset" >
+          <label class=" item">
+              Place name :&nbsp;  <span name="firstname" style="padding:5px;">{{data.PlaceName}}</span>
+          </label>
+		  <label class="item">
+              District :&nbsp; <span style="padding:5px;" ng-model="data.surname">{{data.District}}</span>
+          </label>
+		  <label class="item">
+              Division :&emsp;&emsp;&nbsp;&nbsp; <span >{{data.Division}}</span>
+          </label>
+		  <label class="item">
+              Description :&nbsp;&nbsp; <span style="padding:5px;">{{data.Description}}</span>
+          </label>
+		  <div class="item ">
+              Route From Town :&emsp; <span name="gender" >{{data.route_from_town}}</span>
+          </div>
+          <div class="item">
+              NearBy Hotels: &emsp;&emsp;&nbsp; <span ng-model="data.district">{{data.nearby_hotels}}</span>
+          </div>
+		  <div class="item">
+              NearBy Hospital: &emsp;&emsp;&nbsp; <span ng-model="data.district">{{data.nearby_hospital}}</span>
+          </div>
+          <div class="item">
+              NearBy Police Station &emsp;&emsp;&nbsp; <span ng-model="data.district">{{data.nearby_policeStation}}</span>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>

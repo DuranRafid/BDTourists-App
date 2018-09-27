@@ -1,0 +1,53 @@
+<meta charset="utf-8">
+<ion-view view-title="View Places" name="share-story-view">
+  <ion-content class="padding">
+    
+    <!--  <div class="item" style="border:none;" ng-model="data.district" >
+          Division: &emsp;&nbsp;&nbsp;
+           <select ng-model="data.division" ng-change="changed()" ng-options="item for item in divisions"> </select>        
+      </div> -->
+      <label class="item-input" style="border:none;margin-bottom: 20px;">
+          District: &emsp;&emsp;&nbsp;
+          <select ng-init="district=districts[0]" ng-model="data.district" ng-change="changed()" ng-options="item for item in districts" >
+               <option value ="All"> All </option>
+          </select>      
+      </label>
+       <label class="item-input" style="border:none;margin-bottom: 20px;">
+          Tag: &emsp;&emsp;&emsp;&emsp;
+          <select ng-model="data.tag" ng-change="changed()" >
+              <option value ="Any"> Any </option>
+             <option value ="River"> River </option>
+              <option value="Forest"> Forest</option>
+              <option value="Hill"> Hill </option>
+              <option value="Sea"> Sea </option>
+              <option value="History"> Historical </option>
+              <option value="Edifices"> Edifices </option>
+          </select>      
+      </label>
+      <ion-card >
+       <article ng-repeat="place in places">
+    
+            <div class="item" style="border:1px solid Gainsboro;" ng-click="selected(place)" >  
+            
+              <img ng-src="{{place.image_url}}" class="user-img">
+              <h2 class="card-title"> {{place.name}}</h2>
+              <p> {{place.description}}</p>
+               
+            </div>
+           
+          </article>
+      </ion-card>
+  </ion-content>
+</ion-view>
+<style>
+    .user-img{
+        height:100px;
+        width:100px;
+        float:left;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 5px;
+        margin-right: 5px;
+    }
+    
+</style>

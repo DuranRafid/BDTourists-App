@@ -1,0 +1,62 @@
+<ion-view view-title="View Offers">
+<ion-content>
+            <div class="card " ng-repeat="ads in advertises">
+            <div class="item item-text-wrap"> 
+              <h2 class="card-title">Have a tour in&nbsp;{{ads.area__name}}</h2>
+              <ion-card-content style="position: relative; float: left;">
+                  <h3>Arranged by {{ads.agency}} Agency</h3>
+                  <p>From {{ads.schedule}}</p>
+                  <p>Cost(per person): {{ads.cost}}</p>
+                   <p ng-if="ads.discount>0">Discount: {{ads.discount}}</p>
+                   <p>Transport: {{ads.transport}}</p>
+                   <p>Contact No: {{ads.contact}}</p>
+                   <p>Facebook Page : {{ads.fb_link}}</p>
+                   <p>{{ads.description}}</p>
+                    <p> - Posted by {{ads.user__firstname}}&nbsp;{{ads.user__surname}}</p>
+                  <p> Posted on {{ads.time}}</p>
+              </ion-card-content>
+                <div>
+              <button class="button button-stable button-small icon icon-left ion-thumbsup" style="width: 100px; clear: both;"ng-click="Like(ads.id)" ng-class="{active : isLiked(ads.id)== true}" >
+                  <span ng-show="isLiked(ads.id)">Liked {{ads.upvotes}}</span>
+                  <span ng-show="!isLiked(ads.id)">Like {{ads.upvotes}}</span>
+              </button>
+              <button class="button button-small button-stable icon icon-right ion-thumbsdown" style="width: 100px; float:right;"ng-click="Dislike(ads.id)" ng-class="{active : isDisLiked(ads.id)== true}">
+                   <span ng-show="isDisLiked(ads.id)">Disliked {{ads.downvotes}}</span>
+                  <span ng-show="!isDisLiked(ads.id)">Dislike {{ads.downvotes}}</span> 
+              </button>
+            </div>
+                </div>
+            </div>
+            </ion-content>
+</ion-view>
+<style>
+    ion-header {
+            backdrop-filter: blur(8px);
+        }
+ 
+    ion-navbar {
+        opacity: 0.4;
+        box-shadow: 0px 1px 13px 1px rgba(0,0,0,0.77);
+    }   
+    ion-card {
+            background-color: #fff;
+            width: 100%;
+            margin: 0;
+            margin-bottom: 25px;
+            position: relative;
+           /* top: -30px; */
+        }
+    ion-card:last-of-type {
+        margin-bottom: 0 !important;
+    }
+    ion-item {
+        background-color: #fff;
+    }
+    .btn:hover{
+        box-shadow: 2px 2px 2px 2px black;
+    }
+    .btn:active, .btn:focus{
+        box-shadow: 2px 2px 2px 2px blue;
+    }
+    
+</style>

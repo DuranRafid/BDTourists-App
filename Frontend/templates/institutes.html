@@ -1,0 +1,72 @@
+<ion-view view-title="View Nearby Institutes" name="Sign-up-view">
+  <ion-content class="padding">
+      
+        <div class="card" >
+            <h4>&nbsp;&nbsp;&nbsp;Hotels:</h4>
+            <div ng-repeat="hotel in hotels">
+          <div class="list list-inset" >
+              <div class=" item item-text-wrap" style="border:none; height:25px;  padding-top: 0px;">
+                  {{$index+1}}.
+              </div>
+              <div class=" item item-text-wrap" style="border:none; height:25px;  padding-top: 0px;">
+                  Name &nbsp;&nbsp;&nbsp;:&nbsp;  <span >{{hotel.name}}</span>
+              </div>
+              <label class="item" style="border: none; height:25px; padding-top: 0px;">
+                  Address :&nbsp; <span >{{hotel.address}}</span>
+              </label>
+              <label class="item" style="border: none; height:25px;  padding-top: 0px;" >
+                  Contact :&nbsp;&nbsp; <span >{{hotel.contactno}}</span>
+              </label>
+              <label class="item" style="border: none; height:25px; padding-top: 0px; margin-bottom: 10px;">
+                  Weblink :&nbsp;&nbsp; <span>{{hotel.web_link}}</span>
+              </label>
+          </div>
+            </div>
+        </div>
+          <div class="card">
+              <h4>&nbsp;&nbsp;&nbsp;Hospitals:</h4>
+              <div ng-repeat="hospital in hospitals">
+          <div class="list list-inset" >
+              <div class=" item item-text-wrap" style="border:none; height:25px;  padding-top: 0px;">
+                  {{$index+1}}.
+              </div>
+              <label class=" item" style="border: none;height:25px; padding-top: 0px; ">
+                  Name &nbsp;&nbsp;&nbsp;:&nbsp;  <span >{{hospital.name}}</span>
+              </label>
+              <label class="item" style="border: none; height:25px; padding-top: 0px;">
+                  Address :&nbsp; <span style="">{{hospital.address}}</span>
+              </label>
+              <label class="item" style="border: none; height:25px; padding-top: 0px;">
+                  Contact :&nbsp;&nbsp; <span >{{hospital.contactno}}</span>
+              </label>
+              <label class="item" style="border: none; height:25px; padding-top: 0px; margin-bottom: 10px;">
+                  Weblink :&nbsp;&nbsp; <span>{{hospital.web_link}}</span>
+              </label>
+          </div>
+              </div>
+        </div>
+      <div class="card">
+              <h4>&nbsp;&nbsp;&nbsp;PoliceStations:</h4>
+              <div ng-repeat="police in policeStations">
+          <div class="list list-inset" >
+              <div class=" item item-text-wrap" style="border:none; height:25px;  padding-top: 0px;">
+                  {{$index+1}}.
+              </div>
+              <label class=" item" style="border: none; height:25px; padding-top: 0px;">
+                  Name :&nbsp;&nbsp;&nbsp;&nbsp;  <span >{{police.name}}</span>
+              </label>
+              <label class="item" style="border: none; height:25px; padding-top: 0px;">
+                  Address :&nbsp; <span >{{police.address}}</span>
+              </label>
+              <label class="item" style="border: none; height:25px; padding-top: 0px;">
+                  Contact :&nbsp;&nbsp; <span >{{police.contactno}}</span>
+              </label>
+              <label class="item" style="border: none; height:25px; padding-top: 0px; margin-bottom: 10px;">
+                  Weblink :&nbsp;&nbsp; <span>{{police.web_link}}</span>
+              </label>
+          </div>
+              </div>
+        </div>
+
+  </ion-content>
+</ion-view>

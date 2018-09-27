@@ -1,0 +1,110 @@
+<ion-view view-title="View User Stories">
+    <ion-tabs class="tabs-stable tabs-icon-top">
+        <ion-tab title="Aesthetic" icon="ion-map" >
+            <ion-content>
+            <div class="card " ng-repeat="aes in story.aesthetic" style="margin-top: 100px; padding-top: 0px;">
+            <div class="item item-text-wrap"> 
+              <h3 class="card-title"> {{aes.user__firstname}}&nbsp;{{aes.user__surname}}</h3>
+              <ion-card-content style="position: relative; float: left;"> 
+                  <img ng-src="{{aes.image_url}}" />
+                  <p class="noWhiteSpace">{{aes.description}}</p> 
+              <p class="noWhiteSpace"> - Posted on {{aes.time}}</p>
+              </ion-card-content>
+              <button class="button button-small icon icon-left ion-thumbsup btn" style="width: 100px; float: left; clear: both;" ng-click="Like(aes.id)" ng-class="{active : isLiked(aes.id)== true}"  >
+                  <span ng-show="isLiked(aes.id)"  >Liked {{aes.upvotes}}</span>
+                  <span ng-show="!isLiked(aes.id)">Like {{aes.upvotes}}</span>
+              </button>
+              <button class="button button-small button-stable icon icon-right ion-thumbsdown btn" id="dislike" style="width: 100px; float:right;" ng-click="Dislike(aes.id)" ng-class="{active : isDisLiked(aes.id)== true}">
+                   <span ng-show="isDisLiked(aes.id)">Disliked {{aes.downvotes}}</span>
+                  <span ng-show="!isDisLiked(aes.id)">Dislike {{aes.downvotes}}</span>
+              </button>
+            </div> 
+            </div>
+            </ion-content>
+       <!--     <ion-nav-view name="tab-dash"> fygygugyg </ion-nav-view> -->
+        </ion-tab>
+        <ion-tab title="Report" icon="ion-chatboxes">
+            <ion-nav-view name="chat">
+             <ion-content>
+            <div class="card " ng-repeat="rep in story.report">
+            <div class="item item-text-wrap"> 
+              <h3 class="card-title">{{rep.user__firstname}}&nbsp;{{rep.user__surname}}</h3>
+              <ion-card-content style="position: relative; float: left;">  
+                  <p>Accident Types: &nbsp;{{rep.accident_type}}</p>
+                  <p>Reason: &nbsp;{{rep.reason}}</p>
+                   <p>{{rep.description}}</p> 
+                    <p> - Posted on {{rep.time}}</p>
+              </ion-card-content>
+                <div>
+              <button class="button button-stable button-small icon icon-left ion-thumbsup" style="width: 100px; clear: both;"ng-click="Like(rep.id)" ng-class="{active : isLiked(rep.id)== true}">
+                  <span ng-show="isLiked(rep.id)">Liked {{rep.upvotes}}</span>
+                  <span ng-show="!isLiked(rep.id)">Like {{rep.upvotes}}</span>
+              </button>
+              <button class="button button-small button-stable icon icon-right ion-thumbsdown" style="width: 100px; float:right;"ng-click="Dislike(rep.id)" ng-class="{active : isDisLiked(rep.id)== true}">
+                    <span ng-show="isDisLiked(rep.id)">Disliked {{rep.downvotes}}</span>
+                  <span ng-show="!isDisLiked(rep.id)">Dislike {{rep.downvotes}}</span>
+              </button>
+            </div>
+                </div>
+            </div>
+            </ion-content>
+            </ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Journey" icon="ion-checkmark">
+            <ion-nav-view name="checklist">
+            <ion-content>
+            <div class="card " ng-repeat="jour in story.journey">
+            <div class="item item-text-wrap"> 
+              <h3 class="card-title"> {{jour.user__firstname}}&nbsp;{{jour.user__surname}}</h3>
+              <ion-card-content> 
+                  <p>Duration: &nbsp;{{jour.duration}}</p>
+                  <p>Cost: &nbsp;{{jour.cost}}</p>
+                  <p>{{jour.description}}</p>  
+                  <p> - Posted on {{jour.time}}</p>
+              </ion-card-content>
+              <button class="button button-stable button-small icon icon-left ion-thumbsup" style="width: 100px; float:left;"ng-click="Like(jour.id)" ng-class="{active : isLiked(jour.id)== true}">
+                  <span ng-show="isLiked(jour.id)">Liked {{jour.upvotes}}</span>
+                  <span ng-show="!isLiked(jour.id)">Like {{jour.upvotes}}</span>
+              </button>
+              <button class="button button-small button-stable icon icon-right ion-thumbsdown" style="width: 100px; float:right;"ng-click="Dislike(jour.id)" ng-class="{active : isDisLiked(jour.id)== true}">
+                   <span ng-show="isDisLiked(jour.id)">Disliked {{jour.downvotes}}</span>
+                  <span ng-show="!isDisLiked(jour.id)">Dislike {{jour.downvotes}}</span> 
+              </button>
+            </div> 
+            </div>
+            </ion-content>
+            </ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>
+<style>
+    ion-header {
+            backdrop-filter: blur(8px);
+        }
+ 
+    ion-navbar {
+        opacity: 0.4;
+        box-shadow: 0px 1px 13px 1px rgba(0,0,0,0.77);
+    }   
+    ion-card {
+            background-color: #fff;
+            width: 100%;
+            margin: 0;
+            margin-bottom: 25px;
+            position: relative;
+           /* top: -30px; */
+        }
+    ion-card:last-of-type {
+        margin-bottom: 0 !important;
+    }
+    ion-item {
+        background-color: #fff;
+    }
+    .btn:hover{
+        box-shadow: 2px 2px 2px 2px black;
+    }
+    .btn:active, .btn:focus{
+        box-shadow: 2px 2px 2px 2px blue;
+    }
+    
+</style>
